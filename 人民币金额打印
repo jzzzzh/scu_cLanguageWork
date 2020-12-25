@@ -42,3 +42,116 @@ int main(){
 	}
 	return 0;
 }
+
+
+//another choice
+/*
+#include<iostream>
+#include<string>
+using namespace std;
+string NUM[10];
+string WS[7];
+void ntoc(string s)
+{
+	int length = s.length();
+	int flag = 1;
+	int fflag = 1;
+	int tlength = length;
+	while(tlength > 5)
+	{
+		flag = 0;
+		if(s[length - tlength]-'0'> 0)
+		{
+			cout << NUM[s[length - tlength]-'0'] << WS[tlength-6];
+		}
+		else
+		{
+			if(s[length - tlength + 1]-'0'> 0 )
+			cout << "零"; 
+		} 
+		tlength--;
+	}
+	if(flag == 0 && s[length-5]-'0' == 0)
+	{
+		cout << "万";
+	}
+	if(flag == 1)
+	{
+	for(int j = 0; j < length-1; j++)
+	{
+		if(s[j]-'0'> 0)
+		cout << NUM[s[j]-'0'] << WS[length-j-2];
+		else
+		{
+			if(s[j+1]-'0'>0)
+			cout << "零";
+		}
+	}
+	if(s[length-1]-'0'>0)
+	cout << NUM[s[length-1]-'0'];
+	}
+	else if(flag == 0)
+	{
+	for(int j = length - 5; j < length-1; j++)
+	{
+		if(s[j]-'0'> 0)
+		cout << NUM[s[j]-'0'] << WS[length-j-2];
+		else
+		{
+			if(s[j+1]-'0'>0)
+			cout << "零";
+		}
+	}
+	if(s[length-1]-'0'>0)
+	cout << NUM[s[length-1]-'0'];
+	}
+	cout << "圆" << endl;
+	return;		
+}
+int main(void)
+{
+	//number	
+	NUM[0] = "零"; 
+	NUM[1] = "壹";
+	NUM[2] = "贰"; 
+	NUM[3] = "叁";
+	NUM[4] = "肆";
+	NUM[5] = "伍"; 
+	NUM[6] = "陆";
+	NUM[7] = "柒"; 
+	NUM[8] = "捌";
+	NUM[9] = "玖"; 
+
+	//位数 
+	WS[0] = "拾"; 
+	WS[1] = "佰";
+	WS[2] = "仟"; 
+	WS[3] = "万";
+	WS[4] = "拾万";
+	WS[5] = "佰万"; 
+	WS[6] = "仟万";
+	int n;
+	cin >> n;
+	for(int i = 0; i < n; i++)
+	{
+		string sNum;
+		cin >> sNum;
+		if(sNum == "0")
+		{
+			cout << "零";
+//			ntoc(sNum);
+		}
+		if(sNum[0] == '-')
+		{
+			cout << "负";
+			string ssNum(sNum,1,sNum.length()-1);
+			ntoc(ssNum);
+		}
+		else
+		{
+			ntoc(sNum);	
+		}
+	}
+	return 0;
+}
+*/
