@@ -1,8 +1,4 @@
 
-ID	时间	CPU(ms)	状态
-(点击看信息)	得分
-(点击看代码)
-403746	10-28 17:47	2	AC	20
 #include <stdio.h>
 int main() {
     int n, i;
